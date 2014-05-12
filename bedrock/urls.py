@@ -55,7 +55,7 @@ if settings.DEBUG:
     # Remove leading and trailing slashes so the regex matches.
     media_url = settings.MEDIA_URL.lstrip('/').rstrip('/')
     urlpatterns += patterns('',
-        (r'^%s/(?P<path>.*)$' % media_url, 'django.views.static.serve',
+        (r'^%s/(?P<path>.*)$' % media_url, 'lib.bedrock_util.static_serve',
          {'document_root': settings.MEDIA_ROOT}),
         (r'^404/$', handler404),
         (r'^500/$', handler500),
